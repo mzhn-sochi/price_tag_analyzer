@@ -18,3 +18,4 @@ natsort==8.4.0
 nltk==3.8.1
 loguru==0.7.2
 nats-py==2.7.2
+aiohttp==3.9.4

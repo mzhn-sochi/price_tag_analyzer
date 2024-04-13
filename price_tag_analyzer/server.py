@@ -27,8 +27,9 @@ VALIDATION_QUEUE = 'queue:validation'
 
 
 class Server:
-    def __init__(self, nats_url="nats://localhost:4222"):
+    def __init__(self, nats_url="nats://localhost:4222", image_base_url=''):
         self.nats_url = nats_url
+        self.image_base_url = image_base_url
         self.nc = None
         self.semaphore = asyncio.Semaphore(1)
 
@@ -45,10 +46,9 @@ class Server:
                         for word in phrase.split(' '):
                             self.spellchecker.word_frequency.add(word, sys.maxsize)
 
-    @staticmethod
-    async def fetch_image(url):
+    async def fetch_image(self, url):
         async with aiohttp.ClientSession() as session:
-            async with session.get(url) as response:
+            async with session.get(self.image_base_url + url) as response:
                 if response.status == 200:
                     image_bytes = await response.read()
                     img_np = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), cv2.IMREAD_COLOR)

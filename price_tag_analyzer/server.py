@@ -108,14 +108,14 @@ class Server:
                     err = {
                         'message': error_message
                     }
-                    await self.nc.publish(ERRORS_QUEUE, json.dumps(err).encode(), headers={ticket_id: ticket_id})
+                    await self.nc.publish(ERRORS_QUEUE, json.dumps(err).encode(), headers={"ticket_id": ticket_id})
                     logger.warning(error_message)
                 except Exception as e:
                     error_message = f"Unexpected error: {str(e)}"
                     err = {
                         'message': error_message
                     }
-                    await self.nc.publish(ERRORS_QUEUE, json.dumps(err).encode(), headers={ticket_id: ticket_id})
+                    await self.nc.publish(ERRORS_QUEUE, json.dumps(err).encode(), headers={"ticket_id": ticket_id})
                     logger.exception(e)
                 finally:
                     del img_np

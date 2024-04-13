@@ -13,6 +13,7 @@ async def main():
 
     server = Server(
         nats_url=settings.NATS_URL,
+        image_base_url=settings.IMAGE_BASE_URL,
     )
     await server.serve()
 

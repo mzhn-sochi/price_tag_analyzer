@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  price_tag_analyzer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "50051:50051"
+    environment:
+      GRPC_PORT: 50051
+      MAX_WORKERS_COUNT: 10

@@ -1,0 +1,4 @@
+.venv
+__pycache__
+yolov8-price-tag-detection.pt
+runs/

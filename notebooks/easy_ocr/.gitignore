@@ -1,0 +1,9 @@
+datasets
+*.pt
+./EasyOCR
+train_images
+val_images
+output.csv
+train_data.csv
+val_data.csv
+dataset

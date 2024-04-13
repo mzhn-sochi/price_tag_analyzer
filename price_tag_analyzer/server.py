@@ -38,7 +38,7 @@ class Server:
         self.spellchecker = SpellChecker(language=['ru', 'en'])
         # Повышаем приоритет известных слов (названий продуктов и единиц измерений) в словаре
         current_dir = os.path.dirname(os.path.realpath(__file__))
-        csv_files = ['products.csv', 'unit_liquid.csv', 'unit_solid.csv']
+        csv_files = ['products.csv', 'unit_liquid.csv', 'unit_solid.csv', 'milk_types.csv']
         for file_name in csv_files:
             with open(os.path.join(current_dir, 'parse_texts/data/', file_name), 'r') as f:
                 for line in f:

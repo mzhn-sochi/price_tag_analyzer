@@ -33,12 +33,13 @@ def yolo(img, model):
     return detections
 
 
-BBOX_OCR_PADDING = 10
+BBOX_OCR_PADDING = 5
 SIMILAR_CHARACTERS_NUMBERS = {
     'з': '3',
     'o': '0',
     'о': '0',
     'б': '6',
+    'a': '4',
 }
 
 SIMILAR_CHARACTERS_SPECIAL = {
@@ -128,12 +129,12 @@ def spellcheck(description, spellchecker):
 
     description = corrected_text
     corrected_text = ""
-    for i, character in enumerate(corrected_text):
+    for i, character in enumerate(description):
         if character in SIMILAR_CHARACTERS_SPECIAL:
             corrected_text += SIMILAR_CHARACTERS_SPECIAL[character]
         else:
             corrected_text += character
-    corrected_text = description
+    description = corrected_text
 
     spell = spellchecker
     text = description

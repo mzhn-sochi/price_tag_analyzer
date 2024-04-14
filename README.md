@@ -47,7 +47,7 @@
 
 Ссылка на `yolov8-price-tag-detection.pt`:
 
-[direct](https://download.slipenko.com/yolov8-price-tag-detection.pt) или [Gdrive](https://drive.google.com/file/d/1dySk7_7n0ufE0ZtEmu91fATpK7bRaRbF/view?usp=drive_link)
+[direct](https://download.slipenko.com/mzhn-team-sochi/yolov8-price-tag-detection.pt)
 
 dev:
 
